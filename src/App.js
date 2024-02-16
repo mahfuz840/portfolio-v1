@@ -6,6 +6,7 @@ import Home from './page/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { useRef } from 'react';
+import ReactFullpage from '@fullpage/react-fullpage';
 
 
 const url = (name, wrap = false) => {
@@ -16,19 +17,24 @@ function App() {
   const parallax = useRef(null);
 
   return (
-    <Parallax pages={2} ref={parallax}>
-      {/* <ParallaxLayer
-        offset={0}
-        sticky={{ start: 0, end: 1 }}>
-          <Navbar/>
-      </ParallaxLayer> */}
+    <ReactFullpage>
+      <ReactFullpage.Wrapper>
+        <Navbar/>
+        <Parallax pages={2} ref={parallax}>
+          {/* <ParallaxLayer
+            offset={0}
+            sticky={{ start: 0, end: 1 }}>
+              <Navbar/>
+          </ParallaxLayer> */}
 
-        <Home />
+          <Home/>
 
-      <ParallaxLayer offset={1}>
-        <AboutMe />
-      </ParallaxLayer>
-    </Parallax>
+          <ParallaxLayer offset={1}>
+            <AboutMe />
+          </ParallaxLayer>
+        </Parallax>
+      </ReactFullpage.Wrapper>
+    </ReactFullpage>
 
     //   <Parallax ref={parallax} pages={3}>
     //   <ParallaxLayer offset={1} speed={2} style={{ backgroundColor: '#805E73' }} />
