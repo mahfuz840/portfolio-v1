@@ -4,6 +4,9 @@
 :root {
   --font-color-muted-white: #f0f8ff;
   --font-color-bg-dark: #141416;
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
 }
 
 body {
@@ -19,10 +22,6 @@ body {
   background-color: var(--font-color-bg-dark);
   height: 120px;
   background-color: rgba(51, 51, 51, 0.0);
-  /* position: fixed !important;
-  top: 0;
-  width: 100%;
-  z-index: 1000; */
 }
 
 .nav-item-logo {
@@ -33,6 +32,9 @@ body {
 .nav-item-contact {
   background: var(--font-color-muted-white);
   padding: 8px 22px;
+  position: fixed;
+  top: 50px;
+  right: 60px;
   display: block;
   border: 2px solid var(--font-color-muted-white);
   background-color: transparent;
@@ -50,23 +52,59 @@ body {
   color: var(--font-color-bg-dark);
 }
 
-.sidebar-sticky {
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding-top: 56px; /* Adjust based on your navbar height */
-  overflow-y: auto;
-  z-index: 1000; /* Set a high z-index to ensure it's above other elements */
-  align-items: flex-end;
-  height: calc(100vh - 2rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  right: 3.125rem;
-  height: calc(100vh - 6.25rem);
+.side-nav-items {
+  list-style: none;
+  position: relative;
 }
 
-.home-section {
+.side-nav-items li a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  text-decoration-line: none;
+  text-decoration-thickness: initial;
+  text-decoration-style: initial;
+  text-decoration-color: initial;
+  font-family: "Source Sans Pro",sans-serif;
+  font-size: 13px;
+  color: #f0f8ff;
+  transition: all .5s ease-in-out;
+}
+
+.side-nav-items:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  border-radius: 50px;
+  height: 100%;
+  display: block;
+  opacity: .4;
+  background-color: #f0f8ff;
+}
+
+.line {
+  height: 50px;
+  width: 3px;
+  background-color: #f0f8ff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50px;
+  transition: all .5s ease-in-out;
+}
+
+.fixed-top {
+  left: auto !important;
+}
+
+.home {
   background-color: var(--font-color-bg-dark);
   height: 100vh;
 }
@@ -120,12 +158,6 @@ h1.title-position div span {
 .bg-pattern {
   height: 400px;
   width: 100%;
-  background: radial-gradient(circle, #3f3f3f 10%, transparent 11%),
-  radial-gradient(circle at bottom left, #585858 5%, transparent 6%),
-  radial-gradient(circle at bottom right, #585858 5%, transparent 6%),
-  radial-gradient(circle at top left, #585858 5%, transparent 6%),
-  radial-gradient(circle at top right, #585858 5%, transparent 6%);
-  background-size: 2.5em 2.5em;
   opacity: 1
 }
 
@@ -139,15 +171,17 @@ h1.title-position div span {
   overflow: hidden;
 	transform: translatey(0px);
 	animation: float 4s ease-in-out infinite, slideInFromTop 0.9s ease-in-out;
+  z-index: 100;
 }
 
 .blurred-code {
   position: absolute;
-  left: 0;
-  bottom: calc(100vh - 600px);
-  opacity: .4;
-  /* -webkit-filter: blur(6px); */
+  bottom: -450px;
+  left: -550px;
+  -webkit-filter: blur(6px);
   filter: blur(6px);
+  transform: rotate(180deg);
+  z-index: 500;
 }
 
 @media (max-width: 960px) {
@@ -234,4 +268,71 @@ h1.title-position div span {
 		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
 		transform: translatey(0px);
 	}
+}
+
+@-webkit-keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.animation-slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+
+.animation-delay-1s {
+  background-color: red;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+
+@-webkit-keyframes fadeOutUpBig {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0);
+  }
+}
+@keyframes fadeOutUpBig {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -2000px, 0);
+    transform: translate3d(0, -2000px, 0);
+  }
+}
+.animation-fadeOutUpBig {
+  -webkit-animation-name: fadeOutUpBig;
+  animation-name: fadeOutUpBig;
+}
+
+.animation-slower {
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
 }

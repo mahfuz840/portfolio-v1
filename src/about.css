@@ -1,4 +1,4 @@
-.about-section {
-    background-color: blueviolet;
+.about {
+    background-color: var(--font-color-bg-dark);
     height: 100vh;
 }
