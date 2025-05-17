@@ -1,4 +1,5 @@
 import codeImage from '../asset/image/blurredCodingBg.svg';
+import '../css/Home.css';
 
 const BlurredCodingBg = () => {
     return (

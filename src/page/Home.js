@@ -1,28 +1,23 @@
-import { useContext, useEffect } from "react";
-import { SectionContext } from "../context/SectionContext";
-import { ParallaxLayer } from "@react-spring/parallax";
-import BlurredCodingBg from "../component/BlurredCodingBg";
 import sideDots from "../asset/image/sideDots.png";
 
 const Home = (fullpageState) => {
     const fpDirection = fullpageState.fullpageState.direction;
-    const animation = fpDirection === 'up' 
-                        ? 'animation-slideInDown animation-delay-1s'
-                        : fpDirection === 'down'
-                            ? 'animation-fadeOutUpBig animation-slower'
-                            : '';
+    const animation = fpDirection === 'up'
+        ? 'animation-slideInDown animation-delay-500ms'
+        : fpDirection === 'down'
+            ? 'animation-fadeOutUpBig animation-faster'
+            : '';
+    const animCoder = fpDirection === 'up'
+        ? 'animation-slideInDown animation-delay-200ms'
+        : fpDirection === 'down'
+            ? 'animation-fadeOutUpBig animation-slower animation-delay-200ms'
+            : '';
 
     return (
         <div className="section home">
-            <div className="container-xl">
-                <div className="row align-items-center vh-100">
-                    <div className={`col col-12 col-sm-6 order-2 order-sm-1 animated ${animation}`}
-                         style={
-                            {
-                                // '--animate-duration': '1000ms', 
-                                // '--animate-delay': '400ms'
-                            }
-                        }>
+            <div className="container">
+                <div className="row align-items-center" style={{ 'height': '100vh' }}>
+                    <div className={`col col-12 col-sm-6 order-2 order-sm-1 animated ${animation}`}>
                         <div className="row">
                             <h1 className="title-position">
                                 <div>
@@ -60,13 +55,14 @@ const Home = (fullpageState) => {
                     </div>
 
                     <div className="col col-12 col-sm-6 order-1 order-sm-2 align-items-center">
-                        <div className="bg-pattern" style={{ backgroundImage: `url(${sideDots})` }}>
-                            <div className="coder-illustration"></div>
+                        <div className="coder-wrapper">
+                            <div className="bg-pattern" style={{ backgroundImage: `url(${sideDots})` }}>
+                                
+                            </div>
+                            <div className={`coder-illustration animated ${animCoder}`}></div>
                         </div>
                     </div>
                 </div>
-
-                <BlurredCodingBg />
             </div>
         </div>
     );

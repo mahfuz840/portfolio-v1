@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { NavItemContext } from "../context/NavItemContext";
 
 const NavItem = ({ section, index }) => {
-    const { activeSection, setTopPx } = useContext(NavItemContext);
+    const { activeSection, setActiveSection, setTopPx, fullpageApi } = useContext(NavItemContext);
 
     let topPxIfActive;
     switch (index) {
@@ -40,6 +40,16 @@ const NavItem = ({ section, index }) => {
                     setTopPx(topPxIfActive);
                 }}
                 onMouseLeave={(e) => {
+                }}
+                onClick={(e) => {
+                    if (fullpageApi) {
+                        console.log('moving with api');
+                        fullpageApi.moveTo(section);
+                    } else {
+                        console.log('moving without api');
+                    }
+
+                    setActiveSection(section);
                 }}>
                 <a href="#" title={section}>{index}</a>
             </li>

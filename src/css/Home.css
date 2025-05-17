@@ -1,0 +1,9 @@
+.blurred-code {
+    position: absolute;
+    bottom: -450px;
+    left: -550px;
+    -webkit-filter: blur(6px);
+    filter: blur(6px);
+    transform: rotate(180deg);
+    z-index: 1;
+  }  

@@ -1,4 +1,37 @@
 .about {
     background-color: var(--font-color-bg-dark);
+    position: relative;
     height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Fix overlapping issue by positioning elements manually */
+.about-left, .about-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);  /* Center vertically */
+    width: 40%;
+    color: white;
+}
+
+.about-left {
+    left: 10%;  /* Moves it to the left */
+    text-align: left;
+}
+
+.about-right {
+    right: 10% !important;  /* Moves it to the right */
+    text-align: right;
+}
+
+.about-left h2 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.about-right p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 400px;
 }

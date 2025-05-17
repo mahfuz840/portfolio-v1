@@ -1,0 +1,32 @@
+.desc-about {
+    font-size: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--font-color-muted-white);
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #f0f8ff;
+    opacity: .7;
+    line-height: 24px;
+}
+
+h1.heading-greetings div span:hover {
+    color: #f4a949;
+    cursor: default;
+    -webkit-animation: rubberBand;
+    animation: rubberBand;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    z-index: 100;
+}
+
+h1.heading-greetings div span {
+    color: var(--font-color-muted-white);
+    display: inline-block;
+    font-weight: bolder;
+    font-size: 60px;
+    transition: all .8s ease-out;
+}
+
+p {
+    color: var(--font-color-muted-white);
+}

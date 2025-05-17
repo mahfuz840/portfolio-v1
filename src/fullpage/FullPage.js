@@ -3,9 +3,10 @@ import Home from "../page/Home";
 import AboutMe from "../page/AboutMe";
 import { useContext } from "react";
 import { NavItemContext } from "../context/NavItemContext";
+import BlurredCodingBg from "../component/BlurredCodingBg";
 
 const FullPage = () => {
-  const {setActiveSection} = useContext(NavItemContext);
+  const {setActiveSection, setFullpageApi} = useContext(NavItemContext);
 
     return (
         <ReactFullpage
@@ -22,10 +23,13 @@ const FullPage = () => {
         easingcss3 = {'cubic-bezier(0.88,0,0.265,1)'}
 
         render={({ state, fullpageApi }) => {
+          setFullpageApi(fullpageApi);
+
           return (
             <ReactFullpage.Wrapper>
               <Home fullpageState={state}/>
-              <AboutMe/>
+              <BlurredCodingBg/>
+              <AboutMe fullpageState={state}/>
     
               {/* <div className="section">
                 <p>Section 1 (welcome to fullpage.js)</p>

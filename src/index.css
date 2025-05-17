@@ -106,7 +106,18 @@ body {
 
 .home {
   background-color: var(--font-color-bg-dark);
-  height: 100vh;
+  height: 100vh; /* Use vh for full viewport height */
+  width: 100%;
+  position: relative; /* Add relative positioning */
+  overflow: hidden;
+}
+
+.about {
+  background-color: var(--font-color-bg-dark);
+  height: 100vh; /* Use vh for full viewport height */
+  width: 100%;
+  position: relative; /* Add relative positioning */
+  overflow: hidden;
 }
 
 p.desc {
@@ -161,6 +172,10 @@ h1.title-position div span {
   opacity: 1
 }
 
+.coder-wrapper {
+  position: relative;
+}
+
 .coder-illustration {
   width: 100% !important;
   height: 100%;
@@ -170,18 +185,11 @@ h1.title-position div span {
   background-size: contain;
   overflow: hidden;
 	transform: translatey(0px);
-	animation: float 4s ease-in-out infinite, slideInFromTop 0.9s ease-in-out;
+  animation: slideInFromTop 1s ease-out forwards, float 4s ease-in-out infinite alternate 1s;
   z-index: 100;
-}
-
-.blurred-code {
   position: absolute;
-  bottom: -450px;
-  left: -550px;
-  -webkit-filter: blur(6px);
-  filter: blur(6px);
-  transform: rotate(180deg);
-  z-index: 500;
+  top: 0;
+  left: 0;
 }
 
 @media (max-width: 960px) {
@@ -239,20 +247,41 @@ h1.title-position div span {
 }
 
 @keyframes slideInFromTop {
- 0% {
+  0% {
     opacity: 0;
-    transform: translateY(-2000px);
- }
- 60% {
+    transform: translateY(-100%);
+  }
+
+  /* Faster fall (same as previous) */
+  30% {
     opacity: 1;
-    transform: translateY(30px);
- }
- 80% {
-    transform: translateY(-10px);
- }
- 100% {
     transform: translateY(0);
- }
+  }
+
+  /* Bouncing section (slightly faster) */
+  45% {
+    transform: translateY(-30px);
+  }
+
+  60% {
+    transform: translateY(10px);
+  }
+
+  75% {
+    transform: translateY(-5px);
+  }
+
+  /* Shortened pause at peak */
+  85% {
+    transform: translateY(2px);
+  }
+
+  /* End of bouncing section */
+
+  100% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes float {
@@ -272,37 +301,64 @@ h1.title-position div span {
 
 @-webkit-keyframes slideInDown {
   from {
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+    -webkit-transform: translate3d(0, -1000px, 0);
+    transform: translate3d(0, -1000px, 0);
     visibility: visible;
+    opacity: 0;
   }
 
   to {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
+
 @keyframes slideInDown {
   from {
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+    -webkit-transform: translate3d(0, -1000px, 0);
+    transform: translate3d(0, -1000px, 0);
     visibility: visible;
+    opacity: 0;
   }
 
   to {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
+
 .animation-slideInDown {
   -webkit-animation-name: slideInDown;
   animation-name: slideInDown;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-delay-500ms {
+  -webkit-animation-delay: 500ms;
+  animation-delay: 500ms;
+  animation-duration: 500ms;
+}
+
+.animation-delay-200ms {
+  -webkit-animation-delay: 200ms;
+  animation-delay: 200ms;
+  animation-duration: 500ms;
 }
 
 .animation-delay-1s {
-  background-color: red;
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  animation-duration: 500ms;
+}
+
+.animation-delay-200ms {
+  -webkit-animation-delay: 200ms;
+  animation-delay: 200ms;
+  animation-duration: 200ms;
 }
 
 @-webkit-keyframes fadeOutUpBig {
@@ -312,10 +368,11 @@ h1.title-position div span {
 
   to {
     opacity: 0;
-    -webkit-transform: translate3d(0, -2000px, 0);
-    transform: translate3d(0, -2000px, 0);
+    -webkit-transform: translate3d(0, -1000px, 0);
+    transform: translate3d(0, -1000px, 0);
   }
 }
+
 @keyframes fadeOutUpBig {
   from {
     opacity: 1;
@@ -323,16 +380,42 @@ h1.title-position div span {
 
   to {
     opacity: 0;
-    -webkit-transform: translate3d(0, -2000px, 0);
-    transform: translate3d(0, -2000px, 0);
+    -webkit-transform: translate3d(0, -1000px, 0);
+    transform: translate3d(0, -1000px, 0);
   }
 }
+
 .animation-fadeOutUpBig {
   -webkit-animation-name: fadeOutUpBig;
   animation-name: fadeOutUpBig;
 }
 
+.animation-faster {
+  -webkit-animation-duration: 2000ms;
+  animation-duration: 2000ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-fastest {
+  -webkit-animation-duration: 1500ms;
+  animation-duration: 1500ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 .animation-slower {
-  -webkit-animation-duration: 3s;
-  animation-duration: 3s;
+  -webkit-animation-duration: 3000ms;
+  animation-duration: 3000ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1s {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1s {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
 }

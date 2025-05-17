@@ -15,8 +15,6 @@ const url = (name, wrap = false) => {
 }
 
 function App() {
-  const parallax = useRef(null);
-
   return (
     <NavItemContextProvider>
       <Navbar/>
