@@ -3,14 +3,14 @@ import sideDots from "../asset/image/sideDots.png";
 const Home = (fullpageState) => {
     const fpDirection = fullpageState.fullpageState.direction;
     const animation = fpDirection === 'up'
-        ? 'animation-slideInDown animation-delay-500ms'
+        ? 'animation-slideInFromTop animation-duration-1200ms'
         : fpDirection === 'down'
-            ? 'animation-fadeOutUpBig animation-faster'
+            ? 'animation-fadeOutUpBig animation-duration-1200ms'
             : '';
     const animCoder = fpDirection === 'up'
-        ? 'animation-slideInDown animation-delay-200ms'
+        ? 'animation-slideInFromTop animation-duration-1400ms'
         : fpDirection === 'down'
-            ? 'animation-fadeOutUpBig animation-slower animation-delay-200ms'
+            ? 'animation-fadeOutUpBig animation-duration-1s'
             : '';
 
     return (

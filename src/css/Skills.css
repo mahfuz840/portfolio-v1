@@ -1,0 +1,66 @@
+h1.heading-skills div span:hover {
+    color: #f4a949;
+    cursor: default;
+    -webkit-animation: rubberBand;
+    animation: rubberBand;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    z-index: 100;
+}
+
+h1.heading-skills div span {
+    color: var(--font-color-muted-white);
+    display: inline-block;
+    font-weight: bolder;
+    font-size: 60px;
+    transition: all .8s ease-out;
+    z-index: 2;
+    position: relative;
+}
+
+h1.heading-skills {
+    /* This is to stop the jerky feeling when hovered. I am not sure why it works, but it works :) */
+    padding-bottom: 2px;
+}
+
+p.skill-quote {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    opacity: 0.7;
+    letter-spacing: 1px;
+}
+
+p.skill-desc {
+    max-width: 50%;
+    margin: 0 auto 16px auto;
+}
+
+a.linkedin {
+    text-decoration: none;
+    color: peru;
+    font-weight: bold;
+}
+
+.skill-icon img {
+    width: 68px;
+    height: 68px;
+}
+
+.skill-item-name {
+    color: var(--font-color-muted-white);
+}
+
+@media (max-width: 960px) {
+    body {
+        overflow-y: scroll;
+    }
+
+    h1.heading-skills div span {
+        font-size: 40px;
+    }
+
+    p.skill-quote {
+        font-size: 15px;
+    }
+}

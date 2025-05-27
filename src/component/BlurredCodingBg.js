@@ -1,12 +1,12 @@
-import codeImage from '../asset/image/blurredCodingBg.svg';
+import codeImage from '../asset/image/colorful-line-pattern.svg';
 import '../css/Home.css';
 
-const BlurredCodingBg = () => {
+const BlurredCodingBg = ({ className }) => {
     return (
-        <div className="blurred-code">
+        <div className={className}>
             <img src={codeImage} />
         </div>
     );
 }
- 
+
 export default BlurredCodingBg;

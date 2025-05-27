@@ -4,47 +4,43 @@ import AboutMe from "../page/AboutMe";
 import { useContext } from "react";
 import { NavItemContext } from "../context/NavItemContext";
 import BlurredCodingBg from "../component/BlurredCodingBg";
+import Skills from "../page/Skills";
 
 const FullPage = () => {
-  const {setActiveSection, setFullpageApi} = useContext(NavItemContext);
+  const { setActiveSection, setFullpageApi } = useContext(NavItemContext);
 
-    return (
-        <ReactFullpage
+  return (
+    <div style={{ position: 'relative' }}>
+      <ReactFullpage
         //fullpage options
         // licenseKey = {'YOUR_KEY_HERE'}
         onLeave={(origin, destination, direction) => {
           setActiveSection(destination.anchor);
         }} // state does not change without this one
-        anchors = {['home', 'about', 'skills', 'portfolio', 'contact']}
-        scrollingSpeed = {1200}
-        fitToSection = {true}
-        fitToSectionDelay = {2000}
-        easing = {'easeInOutCubic'}
-        easingcss3 = {'cubic-bezier(0.88,0,0.265,1)'}
+        anchors={['home', 'about', 'skills', 'portfolio', 'contact']}
+        scrollingSpeed={1200}
+        fitToSection={true}
+        fitToSectionDelay={2000}
+        easing={'easeInOutCubic'}
+        easingcss3={'cubic-bezier(0.88,0,0.265,1)'}
 
         render={({ state, fullpageApi }) => {
           setFullpageApi(fullpageApi);
+          console.log('direction', state.direction);
 
           return (
             <ReactFullpage.Wrapper>
-              <Home fullpageState={state}/>
-              <BlurredCodingBg/>
-              <AboutMe fullpageState={state}/>
-    
-              {/* <div className="section">
-                <p>Section 1 (welcome to fullpage.js)</p>
-                <button onClick={() => fullpageApi.moveSectionDown()}>
-                  Click me to move down
-                </button>
-              </div>
-              <div className="section">
-                <p>Section 2</p>
-              </div> */}
+              <Home fullpageState={state} />
+              <BlurredCodingBg className='blurred-code-1' />
+              <AboutMe fullpageState={state} />
+              <BlurredCodingBg className='blurred-code-2' />
+              <Skills fullpageState={state} />
             </ReactFullpage.Wrapper>
           );
         }}
       />
-    )
+    </div>
+  )
 }
- 
+
 export default FullPage;

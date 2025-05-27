@@ -3,9 +3,12 @@ import SideNavItem from "./NavItem";
 import NavItemIndicator from "./NavItemIndicator";
 import { NavItemContext } from "../context/NavItemContext";
 
+import svgTerminal from '../asset/image/terminal.svg';
+
 const Navbar = () => {
     return (
         <nav className="navbar fixed-top navbar-dark align-center vh-100 me-5">
+            {/* <img className="terminal" src={svgTerminal}/> */}
             <a href="#" className="nav-item-contact">Contact</a>
             
             <ul className="side-nav-items">
