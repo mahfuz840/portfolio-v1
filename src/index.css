@@ -484,15 +484,184 @@ h1.title-position div span {
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+.animation-duration-900ms {
+  -webkit-animation-duration: 900ms;
+  animation-duration: 900ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-950ms {
+  -webkit-animation-duration: 950ms;
+  animation-duration: 950ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+
+.animation-duration-1000ms {
+  -webkit-animation-duration: 1000ms;
+  animation-duration: 1000ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1050ms {
+  -webkit-animation-duration: 1050ms;
+  animation-duration: 1050ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1100ms {
+  -webkit-animation-duration: 1100ms;
+  animation-duration: 1100ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1150ms {
+  -webkit-animation-duration: 1150ms;
+  animation-duration: 1150ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 .animation-duration-1200ms {
   -webkit-animation-duration: 1200ms;
   animation-duration: 1200ms;
   transition: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
+.animation-duration-1250ms {
+  -webkit-animation-duration: 1250ms;
+  animation-duration: 1250ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1300ms {
+  -webkit-animation-duration: 1300ms;
+  animation-duration: 1300ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1350ms {
+  -webkit-animation-duration: 1350ms;
+  animation-duration: 1350ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
 .animation-duration-1400ms {
   -webkit-animation-duration: 1400ms;
   animation-duration: 1400ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1450ms {
+  -webkit-animation-duration: 1450ms;
+  animation-duration: 1450ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1500ms {
+  -webkit-animation-duration: 1500ms;
+  animation-duration: 1500ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1550ms {
+  -webkit-animation-duration: 1550ms;
+  animation-duration: 1550ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1600ms {
+  -webkit-animation-duration: 1600ms;
+  animation-duration: 1600ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1650ms {
+  -webkit-animation-duration: 1650ms;
+  animation-duration: 1650ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1700ms {
+  -webkit-animation-duration: 1700ms;
+  animation-duration: 1700ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1750ms {
+  -webkit-animation-duration: 1750ms;
+  animation-duration: 1750ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1800ms {
+  -webkit-animation-duration: 1800ms;
+  animation-duration: 1800ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1850ms {
+  -webkit-animation-duration: 1850ms;
+  animation-duration: 1850ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1900ms {
+  -webkit-animation-duration: 1900ms;
+  animation-duration: 1900ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-1950ms {
+  -webkit-animation-duration: 1950ms;
+  animation-duration: 1950ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-2000ms {
+  -webkit-animation-duration: 2000ms;
+  animation-duration: 2000ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+} 
+
+.animation-duration-2050ms {
+  -webkit-animation-duration: 2050ms;
+  animation-duration: 2050ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-2100ms {
+  -webkit-animation-duration: 2100ms;
+  animation-duration: 2100ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-2150ms {
+  -webkit-animation-duration: 2150ms;
+  animation-duration: 2150ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-2200ms {
+  -webkit-animation-duration: 2200ms;
+  animation-duration: 2200ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-2250ms {
+  -webkit-animation-duration: 2250ms;
+  animation-duration: 2250ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-2300ms {
+  -webkit-animation-duration: 2300ms;
+  animation-duration: 2300ms;
+  transition: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-duration-2350ms {
+  -webkit-animation-duration: 2350ms;
+  animation-duration: 2350ms;
   transition: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
@@ -542,5 +711,17 @@ h1.title-position div span {
   filter: blur(6px);
   z-index: 1;
   transform: rotate(180deg);
+  opacity: 0.7;
+}
+
+.blurred-code-3 {
+  position: absolute;
+  bottom: calc(-100vh * 2 - 300px);
+  left: -200px;
+  height: 500px;
+  width: 500px;
+  -webkit-filter: blur(6px);
+  filter: blur(6px);
+  z-index: 1;
   opacity: 0.7;
 }

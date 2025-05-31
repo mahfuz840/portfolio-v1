@@ -35,6 +35,7 @@ const FullPage = () => {
               <AboutMe fullpageState={state} />
               <BlurredCodingBg className='blurred-code-2' />
               <Skills fullpageState={state} />
+              <BlurredCodingBg className='blurred-code-3' />
             </ReactFullpage.Wrapper>
           );
         }}

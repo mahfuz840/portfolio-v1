@@ -16,12 +16,56 @@ import python from '../asset/image/python.png'
 import SkillItem from '../component/SkillItem';
 
 const Skills = (fullpageState) => {
-    const fpDirection = fullpageState.fullpageState.direction;
+    const { direction, origin, destination } = fullpageState?.fullpageState || {};
+    const isEntering = destination?.anchor === 'skills';
+
+    const animation = isEntering
+        ? direction === 'up'
+            ? 'animation-slideInFromTop'
+            : direction === 'down'
+                ? 'animation-slideInFromBelow'
+                : ''
+        : direction === 'up'
+            ? 'animation-slideOutDown'
+            : direction === 'down'
+                ? 'animation-fadeOutUpBig'
+                : '';
+
+    const animDesc = isEntering
+        ? direction === 'up'
+            ? 'animation-slideInFromTop animation-duration-1200ms'
+            : direction === 'down'
+                ? 'animation-slideInFromBelow animation-duration-1200ms'
+                : ''
+        : direction === 'up'
+            ? 'animation-slideOutDown animation-duration-2000ms'
+            : direction === 'down'
+                ? 'animation-fadeOutUpBig animation-duration-900ms'
+                : '';
+
+    const skillItems = [
+        [java, 'Java'],
+        [springBoot, 'Spring'],
+        [react, 'React JS'],
+        [microservice, 'Microservice'],
+        [docker, 'Docker'],
+        [kubernetes, 'Kubernetes'],
+        [oracle, 'Oracle DB'],
+        [rabbitmq, 'RabbitMQ'],
+        [kafka, 'Kafka'],
+        [prometheus, 'Prometheus'],
+        [graphana, 'Grafana'],
+        [zipkin, 'Zipkin'],
+        [python, 'Python']
+    ];
+
+    const firstRow = skillItems.slice(0, 7);
+    const secondRow = skillItems.slice(7);
 
     return (
         <div className="section skills">
             <div className='container'>
-                <div className='row align-items-center'>
+                <div className='row align-items-center mb-5'>
                     <div className="col col-12 text-center">
                         <p className='skill-quote'>A PROBLEM IS A CHANCE FOR YOU TO DO YOUR BEST</p>
                         <h1 className="heading-skills">
@@ -47,62 +91,33 @@ const Skills = (fullpageState) => {
                                 <span>e</span>
                             </div>
                         </h1>
-                        <p>The main area of expertise is backend development, system design and DevOps.</p>
-                        <p className='skill-desc'>Building medium and large web applications with Java and ReactJS while maintaining the scalability and robustness to support millions of data and users. </p>
-                        <p>Please visit my <a className='linkedin' href='#'>Linkedin</a> for more details</p>
+                        <p className={`${animDesc}`}>The main area of expertise is backend development, system design and DevOps.</p>
+                        <p className={`skill-desc ${animDesc}`}>Building medium and large web applications with Java and ReactJS while maintaining the scalability and robustness to support millions of data and users. </p>
+                        <p className={`${animDesc}`}>Please visit my <a className='linkedin' href='#'>Linkedin</a> for more details</p>
 
                         <div className='row justify-content-center align-items-center'>
-                            <div className='col-auto'>
-                                <SkillItem icon={java} text={'Java'} />
-                            </div>
+                            {firstRow.map(([icon, text], index) => {
+                                const reversedIndex = direction === 'up' ? firstRow.length - 1 - index : index;
+                                const durationClass = `animation-duration-${1000 + reversedIndex * 100}ms`;
+                                return (
+                                    <div key={text} className={`col-auto mx-3 mt-4 animated ${animation} ${durationClass}`}>
+                                        <SkillItem icon={icon} text={text} />
+                                    </div>
+                                );
+                            })}
+                        </div>
 
-                            <div className='col-auto'>
-                                <SkillItem icon={springBoot} text={'Spring'} />
-                            </div>
-
-                            <div className='col-auto'>
-                                <SkillItem icon={react} text={'React JS'} />
-                            </div>
-
-                            <div className='col-auto'>
-                                <SkillItem icon={microservice} text={'Microservice'} />
-                            </div>
-
-                            <div className='col-auto'>
-                                <SkillItem icon={docker} text={'Docker'} />
-                            </div>
-
-                            <div className='col-auto'>
-                                <SkillItem icon={kubernetes} text={'Kubernetes'} />
-                            </div>
-
-                            <div className='col-auto'>
-                                <SkillItem icon={oracle} text={'Oracle DB'} />
-                            </div>
-
-                            <div className='col-auto'>
-                                <SkillItem icon={rabbitmq} text={'RabbitMQ'} />
-                            </div>
-
-                            <div className='col-auto'>
-                                <SkillItem icon={kafka} text={'Kafka'} />
-                            </div>
-
-                            <div className='col-auto'>
-                                <SkillItem icon={prometheus} text={'Prometheus'} />
-                            </div>
-
-                            <div className='col-auto'>
-                                <SkillItem icon={graphana} text={'Grafana'} />
-                            </div>
-
-                            <div className='col-auto'>
-                                <SkillItem icon={zipkin} text={'Zipkin'} />
-                            </div>
-
-                            <div className='col-auto'>
-                                <SkillItem icon={python} text={'Python'} />
-                            </div>
+                        <div className='row justify-content-center align-items-center'>
+                            {secondRow.map(([icon, text], index) => {
+                                const totalIndex = index + firstRow.length;
+                                const reversedIndex = direction === 'up' ? skillItems.length - 1 - totalIndex : totalIndex;
+                                const durationClass = `animation-duration-${1000 + reversedIndex * 100}ms`;
+                                return (
+                                    <div key={text} className={`col-auto mx-3 mt-5 animated ${animation} ${durationClass}`}>
+                                        <SkillItem icon={icon} text={text} />
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
