@@ -1,0 +1,85 @@
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: white;
+}
+
+.fp-slidesNav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  bottom: 20px;
+}
+
+h1.heading-portfolio div span:hover {
+  color: #f4a949;
+  cursor: default;
+  -webkit-animation: rubberBand;
+  animation: rubberBand;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  z-index: 100;
+}
+
+h1.heading-portfolio div span {
+  color: var(--font-color-muted-white);
+  display: inline-block;
+  font-weight: bolder;
+  font-size: 60px;
+  transition: all .8s ease-out;
+  z-index: 2;
+  position: relative;
+}
+
+h1.heading-portfolio {
+  /* This is to stop the jerky feeling when hovered. I am not sure why it works, but it works :) */
+  padding-bottom: 2px;
+}
+
+p.portfolio-desc {
+  max-width: 50%;
+  margin: 0 auto 16px auto;
+}
+
+.link-exp-details {
+  text-decoration: none;
+  color: peru;
+  font-weight: bold;
+  margin: 0 auto 16px auto;
+  /* animation: slideInFromLeft 0.3s ease-out; */
+}
+
+.link-exp-details::after {
+  content: "❯";
+  margin-left: 10px;
+  display: inline-block;
+  transition: transform 0.35s ease;
+  animation: slideInFromLeft 0.3s ease-out;
+}
+
+.link-exp-details:hover::after {
+  transform: translateX(20px);
+}
+
+img.sphere-sm {
+  position: absolute;
+  /* top: -100px; */
+  left: 15%;
+}
+
+img.sphere-lg {
+  left: 25%;
+  top: 30%;
+  position: absolute;
+}
+
+.dark-cube {
+  height: 178px;
+  width: 200px;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+  display: inline;
+  box-sizing: border-box;
+  position: absolute;
+  top: 25%;
+}

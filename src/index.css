@@ -106,6 +106,7 @@ body {
 
 .home,
 .skills,
+.portfolio,
 .about {
   background-color: var(--font-color-bg-dark);
   height: 100vh;
@@ -350,6 +351,36 @@ h1.title-position div span {
   }
 }
 
+@keyframes slideOutLeft {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: translate3d(-1000px, 0, 0);
+    transform: translate3d(-1000px, 0, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {  
+    -webkit-transform: translate3d(-1000px, 0, 0);
+    transform: translate3d(-1000px, 0, 0);
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
 .animation-slideInDown {
   -webkit-animation-name: slideInDown;
   animation-name: slideInDown;
@@ -361,6 +392,22 @@ h1.title-position div span {
 .animation-slideOutDown {
   -webkit-animation-name: slideOutDown;
   animation-name: slideOutDown;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  animation-name: slideOutLeft;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.animation-slideInFromLeft {
+    -webkit-animation-name: slideInFromLeft;
+  animation-name: slideInFromLeft;
   animation-fill-mode: both;
   -webkit-animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -495,7 +542,6 @@ h1.title-position div span {
   animation-duration: 950ms;
   transition: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-
 
 .animation-duration-1000ms {
   -webkit-animation-duration: 1000ms;
@@ -723,5 +769,18 @@ h1.title-position div span {
   -webkit-filter: blur(6px);
   filter: blur(6px);
   z-index: 1;
+  opacity: 0.7;
+}
+
+.blurred-code-4 {
+  position: absolute;
+  bottom: calc(-100vh * 3 - 200px);
+  right: -200px;
+  height: 500px;
+  width: 500px;
+  -webkit-filter: blur(6px);
+  filter: blur(6px);
+  z-index: 1;
+  transform: rotate(180deg);
   opacity: 0.7;
 }

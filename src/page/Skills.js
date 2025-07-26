@@ -79,16 +79,17 @@ const Skills = (fullpageState) => {
                                 <span>&nbsp;</span>
                                 <span>&</span>
                                 <span>&nbsp;</span>
-                                <span>E</span>
-                                <span>x</span>
-                                <span>p</span>
+                                <span>T</span>
                                 <span>e</span>
-                                <span>r</span>
-                                <span>i</span>
-                                <span>e</span>
-                                <span>n</span>
                                 <span>c</span>
-                                <span>e</span>
+                                <span>h</span>
+                                <span>&nbsp;</span>
+                                <span>S</span>
+                                <span>t</span>
+                                <span>a</span>
+                                <span>c</span>
+                                <span>k</span>
+                                <span>s</span>
                             </div>
                         </h1>
                         <p className={`${animDesc}`}>The main area of expertise is backend development, system design and DevOps.</p>
